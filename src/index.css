@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+}
+
+.dropDownCart {
+  width: max(40vw, 300px);
+}
+
+.searchInput {
+  width: max(40vw, 160px);
+}
+
+
+.rating:not(:checked) > input {
+  position: absolute;
+  appearance: none;
+}
+
+.rating:not(:checked) > label {
+  float: right;
+  cursor: pointer;
+  font-size: 30px;
+  color: #666;
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+  color: #e58e09;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: #ff9e0b;
+}
+
+.rating > input:checked ~ label {
+  color: #ffa723;
+}
+
+@media only screen and (max-width: 532px) {
+  .filter {
+    @apply ml-0 text-xs w-36
+  }
+
+  .cardContainer {
+    @apply ml-28
+  }
+
+  .product {
+    @apply w-[200px] px-1 py-2
+  }
+
+  .productImg {
+    @apply h-[100px]
+  }
+
+  .rating:not(:checked) > label {
+    @apply text-lg
+  }
+}
+
+
+@media only screen and (max-width: 396px) {
+  .product {
+    @apply ml-8 text-xs
+  }
+
+  .logo {
+    @apply size-7 mt-1
+  }
+
+  .header {
+    @apply text-xs
+  }
+
+  .searchInput {
+    @apply mt-2
+  }
+
+  .cartLogo {
+    @apply size-3
+  }
+
+  .dropDownLogo {
+    @apply size-3
+  }
+
+  .containerDropdown {
+    @apply px-0 mt-[6px]
+  }
+
+  .dropDownBtn {
+    @apply px-[6px] py-1
+  }
+
+  .orderCount {
+    @apply bottom-2 right-6 text-[9px] px-[5px]
+  }
+
+  .filter {
+    @apply w-24 h-[45vh]
+  }
+
+  .product {
+    @apply ml-0
+  }
+}
